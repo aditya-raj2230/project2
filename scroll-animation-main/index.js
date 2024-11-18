@@ -27,6 +27,7 @@ directionalLight.position.set(5, 10, 7);
 directionalLight.castShadow = true;
 directionalLight.shadow.mapSize.width = 2048; // Higher resolution shadows
 directionalLight.shadow.mapSize.height = 2048;
+directionalLight.intensity = 1.5; // Increased light intensity
 scene.add(directionalLight);
 
 // Add a background texture
@@ -64,18 +65,26 @@ function initScene({ geo }) {
   const material = new THREE.MeshStandardMaterial({
     map: texLoader.load("./assets/Pack2.png"),
     side: THREE.DoubleSide,
-    metalness: 0.2,
-    roughness: 0.8,
-    emissive: 0x000000,
-    emissiveIntensity: 0.0,
+    metalness: 0,
+    roughness: 0.1,
   });
 
   mesh = new THREE.Mesh(geometry, material);
-  mesh.scale.set(0.4, 0.4, 0.4);
+  mesh.scale.set(0.35, 0.35, 0.35);
   mesh.rotation.y = Math.PI / 2;
   mesh.castShadow = true;
   mesh.receiveShadow = true;
   scene.add(mesh);
+
+  // Adjust lighting
+  directionalLight.intensity = 2.5;
+  directionalLight.position.set(3, 8, 5);
+  ambientLight.intensity = 1.2;
+
+  // Brighter fill light
+  const fillLight = new THREE.DirectionalLight(0xffffff, 1.0);
+  fillLight.position.set(-5, 3, -5);
+  scene.add(fillLight);
 
   // Add controls
   const controls = new OrbitControls(camera, renderer.domElement);
