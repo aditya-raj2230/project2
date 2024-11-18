@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three.js Model</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        background-color: #000000;
+      }
+
+      #three-canvas {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+      }
+
+      #content {
+        margin-left: 0;
+        margin-right: 50%;
+        flex: 1;
+        padding: 0 40px;
+        background-color: #020814;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .content-box {
+        background-color: #0a192f;
+        border-radius: 0;
+        padding: 0 30px 30px 30px;
+        width: 100%;
+        height: calc(100% - 30px);
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      .logo-container {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .logo-container img {
+        max-width: 320px;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: 13px;
+        margin-bottom: 15px;
+        color: #ffffff;
+        font-weight: normal;
+      }
+
+      h2 {
+        font-size: 13px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        color: #ffffff;
+        font-weight: normal;
+      }
+
+      .price-section {
+        font-size: 13px;
+        margin-bottom: 15px;
+        color: #e6e6e6;
+      }
+
+      .description {
+        text-align: left;
+        line-height: 1.2;
+        margin-bottom: 12px;
+        color: #e6e6e6;
+        font-size: 13px;
+      }
+
+      ul {
+        list-style-position: inside;
+        padding-left: 0;
+        text-align: left;
+        margin-bottom: 15px;
+        color: #e6e6e6;
+        font-size: 13px;
+      }
+
+      li {
+        margin-bottom: 3px;
+      }
+
+      .prep-section {
+        text-align: left;
+        color: #e6e6e6;
+        font-size: 13px;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="three-canvas"></canvas>
+    <div id="content">
+      <div class="content-box">
+        <div class="logo-container">
+          <img src="assets/The Answer Logo.webp" alt="The Answer Logo">
+        </div>
+        
+        <h1>Our Flagship Blend: The Answer</h1>
+        
+        <div class="price-section">
+          $11.25 / lb  •  $7.78 / 10oz  •  $24.75 / Kilo  •  $56.25 / 5lb
+        </div>
+        
+        <div class="description">
+          Our flagship blend does double duty for both brewed coffee and espresso applications. The Answer is a medium roasted blend of washed Colombian and Brazilian coffees with a touch of natural processed Ethiopian coffee for complexity and fruit notes.
+        </div>
+        
+        <div class="description">
+          In milk-based drinks, The Answer melts into pure caramel, with a rich, sweet, and balanced flavor profile that will keep you coming back for more.
+        </div>
+
+        <h2>Details</h2>
+        <ul>
+          <li>Origin: Colombia, Brazil, Ethiopia</li>
+          <li>Process: Washed & Natural</li>
+          <li>Roast: Medium</li>
+          <li>Notes: Caramel, Chocolate, Berry</li>
+        </ul>
+
+        <h2>Espresso Preparation</h2>
+        <div class="prep-section">
+          19.1 - 19.7 g's in, 31 - 34 g's out, 26 - 32 sec's.
+        </div>
+      </div>
+    </div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
